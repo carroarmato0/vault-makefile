@@ -11,3 +11,6 @@ Edit the makefile to the version you want to package
 **make**       - fetches the zip file upstream, prepares directories and scripts, then uses FPM to generate a package
 
 **make clean** - cleans all the generated file 
+
+## Tests
+Currently only tested and with Ubuntu 15.10 in mind
