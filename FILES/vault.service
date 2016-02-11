@@ -1,0 +1,18 @@
+# This service is actually a systemd target,
+# but we are using a service since targets cannot be reloaded.
+
+[Unit]
+Description=Vault service
+Requires=network-online.target
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/vault server -config=/etc/vault/server.hcl
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+User=vault
+Group=vault
+
+[Install]
+WantedBy=multi-user.target

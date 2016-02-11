@@ -1,0 +1,4 @@
+chown vault:vault /var/lib/vault/
+systemctl daemon-reload
+setcap cap_ipc_lock=+ep $(readlink -f $(which vault))
+service vault start

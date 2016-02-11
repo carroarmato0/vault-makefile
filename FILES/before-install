@@ -1,0 +1,1 @@
+adduser --system --no-create-home vault

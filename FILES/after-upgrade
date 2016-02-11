@@ -1,0 +1,3 @@
+systemctl daemon-reload
+setcap cap_ipc_lock=+ep $(readlink -f $(which vault))
+service vault restart
