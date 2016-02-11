@@ -1,6 +1,7 @@
 VERSION=0.5.0
 OS=linux
 ARCHITECTURE=amd64
+TARGET=deb
 
 all: directories download prepfiles package
 
@@ -19,7 +20,7 @@ prepfiles:
 package:
 	fpm \
 	-s dir \
-	-t deb \
+	-t ${TARGET} \
 	-f \
 	--log error \
 	-n vault \
